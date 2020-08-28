@@ -9,7 +9,7 @@
         <h1><a href="/">Vijay Padmakumar's Blog</a></h1>
     </div>
 
-    <div>
+    <!-- <div>
 
         <h2><a href="">Django?</a></h2>
         <p>Django is a huge framework that would take me multiple months to learn. The number of things you can do with
@@ -36,7 +36,15 @@
             modules were very interesting and I've really enjoyed making the LEGO robot.
         </p>
         <p>published: 29.08.2020, 01:45:55</p>
+    </div> -->
+
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
+    {% endfor %}
 </body>
 
 </html>
